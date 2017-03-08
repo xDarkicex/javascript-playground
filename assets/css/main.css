@@ -1,0 +1,9 @@
+.answerBox{
+    display: flex;
+    max-width: 500px;
+    overflow-x: scroll;
+}
+
+.answerBox p {
+    padding: 5px;
+}
