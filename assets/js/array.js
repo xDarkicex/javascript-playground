@@ -69,10 +69,18 @@ window.onload = function() {
     wrapper.appendChild(createNode("div", "", "", "chart-1", [["style", "300px"]]));
     wrapper.appendChild(createNode("div", "", "", "chart-2", [["style", "300px"]]));   
     wrapper.appendChild(createNode("div", "", "", "chart-3", [["style", "300px"]]));   
+    // wrapper.appendChild(createNode("input", "", "Username", "", [["type", "text"], ["name", "username"], ["placeholder", "enter username..."]]))
 
 }
+//Strange function
+// function createNode(nodeType, attrs = null) {
+//   var node = document.createElement(nodeType);
+//   Object.assign(node, attrs);
+//   return node;
+// }
 
-function createNode(type, innerText="", className, idName, attributes=[]) {
+
+function createNode(type, innerText="", className, idName, attributes={}) {
     var node = document.createElement(type);
     node.innerHTML = innerText;
     if (className) node.className = className;
@@ -84,6 +92,13 @@ function createNode(type, innerText="", className, idName, attributes=[]) {
             }
         }
     }
+    //ask caaz how this works?
+    // for (var attribute in attributes) {
+    //     if (attributes.hasOwnProperty(attribute)) {
+    //         node.setAttribute(attribute, attributes[attribute]);
+    //     }
+    // }
+    // Object.keys(attributes).forEach((attribute) => node.setAttribute(attribute, attributes[attribute]));
     return node
 }
 
@@ -168,14 +183,6 @@ function lowerBound(arr) {
     return bound
 }
 
-// function variance(arr) {
-//     var m = mean(arr);
-//     var variance = 0;
-//     for (var i = 0; i<arr.length; i++)  {
-//         variance += (arr[i] - m) * (arr[i] - m);
-//     }
-//     return variance / (arr.length-1)
-// }
 
 function standardDeviation(Variance) {
     return Math.sqrt(Variance)
