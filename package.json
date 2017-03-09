@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "chart.js": "^2.5.0",
+    "chartkick": "^2.2.3",
     "lite-server": "^2.2.2"
   }
 }
