@@ -35,12 +35,8 @@ window.onload = function() {
         } else {
             document.querySelector('.medianTitle').innerHTML = "Median: " + median(array).toFixed(2);
         }
-        var test = createNode('input', "", "testing", "", [["type", "text"], ["name", "testing"], ["placeholder", "This is a test"]])
-        wrapper.appendChild(test);
-
 })
     console.timeEnd("build HTML")
-
 }
 
 function createNode(type, innerText="", className, idName, attributes=[]) {
@@ -50,10 +46,8 @@ function createNode(type, innerText="", className, idName, attributes=[]) {
     if (idName) node.id = idName;
     if (attributes.length > 0) {
         for (var i = 0; i < attributes.length; i++) {
-            for (var j = 0; j < attributes[i].length; j++){
-                console.log(attributes[i][j], attributes[i][j+1]);
-                console.log("i", [i], "value: ", attributes[i], "\n", "j", [j], "value: ", attributes[j], "\n","i and j", [i][j], "value: ", attributes[i][j])
-                node.setAttribute(attributes[i][j], attributes[i][j])
+            for (var j=0, k=1; j < attributes[i].length; j += 2, k += 2) {
+                node.setAttribute(attributes[i][j], attributes[i][k]);
             }
         }
     }
