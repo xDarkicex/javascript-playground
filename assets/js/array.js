@@ -118,11 +118,7 @@ function buildArray(node) {
 
 
 function sum(arr) {
-    var count = 0;
-    for (var i = 0; i < arr.length; i++){
-        count += parseInt(arr[i]);
-    }
-    return count
+    return arr.reduce((a, b) => a + b);
 }
 
 function mean(arr) {
